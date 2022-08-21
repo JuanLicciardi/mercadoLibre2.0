@@ -9,20 +9,20 @@ const productsController = require('../controllers/productsController');
 router.get('/', productsController.index); 
 
 /*** CREATE ONE PRODUCT ***/ 
-router.???('/???/', productsController.create); 
-router.???('/', productsController.store); 
+router.get('/add/', productsController.create); 
+router.post('/add', productsController.store); 
 
 
 /*** GET ONE PRODUCT ***/ 
-router.???('/:id/', productsController.detail); 
+router.get('/:id/', productsController.detail); 
 
 /*** EDIT ONE PRODUCT ***/ 
-router.???('/:id/???', productsController.edit); 
-router.???('/:id', productsController.update); 
+router.get('/edit/:id', productsController.edit); 
+router.put('/update/:id', productsController.update); 
 
 
 /*** DELETE ONE PRODUCT***/ 
-router.???('/:id', productsController.destroy); 
+router.delete('/delete/:id', productsController.destroy); 
 
 
 module.exports = router;
