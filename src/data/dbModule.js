@@ -7,8 +7,12 @@ const loadProducts = () => {
     return products;
 }
 
-
+const storeProducts = (products) => {
+    const productsFilePath = path.join(__dirname, './productsDataBase.json');
+    fs.writeFileSync(productsFilePath,JSON.stringify(products), 'utf-8');
+}
 
 module.exports = {
-    loadProducts
+    loadProducts,
+    storeProducts
 }
