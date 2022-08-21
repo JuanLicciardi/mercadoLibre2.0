@@ -49,16 +49,43 @@ const controller = {
 
 	// Update - Form to edit
 	edit: (req, res) => {
-		// Do the magic
+		let productToEdit = loadProducts().find(product => product.id === +req.params.id);
+
+		return res.render('product-edit-form', {
+			productToEdit
+		})
 	},
+	
+	
 	// Update - Method to update
 	update: (req, res) => {
-		// Do the magic
+
+		const {name, price, discount, description, category} = req.body;
+		let productsModify = loadProducts().map(product => {
+			if (product.id === +req.params.id){
+				return {
+					id : product.id,
+					name: name.trim(),
+					price: +price,
+					description : description.trim(),
+					discount : +discount,
+					category,
+					image : product.image
+							
+				}
+			}
+			return product;
+		});
+		storeProducts(productsModify);
+		return res.redirect('/products/detail/' + req.params.id)
 	},
 
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
-		// Do the magic
+		let productsModify = loadProducts().filter(product => product.id !== +req.params.id)
+		storeProducts(productsModify);
+		return res.redirect('/products')
+
 	}
 };
 
