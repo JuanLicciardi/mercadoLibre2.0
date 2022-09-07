@@ -5,12 +5,14 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 30px;
+ 
 }
 
 .register_section{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    text-align: center;
     width: 90%;
     background-color: #ffffff;
     margin-bottom: 20px;
@@ -18,7 +20,7 @@
 }
 
 .register_form{
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -28,10 +30,10 @@
 }
 
 .register_form_contenedor{
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+
 }
 
 .register_form_contenedor-checkbox{
@@ -59,14 +61,20 @@
 .register_form_contenedor-Input{
     width: 100%;
     color: rgba(0, 0, 0, .5);
-    margin: 10px 0;
-    
+    margin: 10px 0 5px 0;
 }
 
 .register_form_contenedor-fn{
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+.small_error{
+    font-size: 11px;
+    color: red;
+    margin-top: 3px;
+
 }
 
 @media (min-width:768px) {
@@ -76,10 +84,10 @@
     .register_form hr{
         width: 95%;
     }
-}
+
 
 @media (min-width:768px) {
     .register_section{
-        max-width: 40%;
+        max-width: 50%;
     }
 }

@@ -9,78 +9,34 @@
 	
     <main class="register_main">
         <section class="register_section">
-            <form class="" action="">
+            <form class="register_form" action="" method="POST">
                 <h4>Datos de Usuario</h4>
                 <div class="register_form_contenedor">
-                    <input class="register_form_contenedor-Input" type="text" value="" id="nombre" placeholder="Ingrese su nombre" >
+                    <input name="regName" class="register_form_contenedor-Input" type="text" value="<%= locals.old && old.regName ? old.regName :null %>" placeholder="Ingrese su nombre" >
+                    <small class="small_error" ><%= locals.errors && errors.regName ? errors.regName.msg : null %>  </small>
                 </div>
                 <div class="register_form_contenedor">
                     <label for="apellido"></label>
-                    <input class="register_form_contenedor-Input" type="text" value="" id="apellido" placeholder="Ingrese su apellido">
+                    <input name="regLastName" class="register_form_contenedor-Input" type="text" value="<%= locals.old && old.regLastName ? old.regLastName :null  %>" id="apellido" placeholder="Ingrese su apellido">
+                    <small class="small_error"><%= locals.errors && errors.regLastName ? errors.regLastName.msg : null %>  </small>
                 </div>
                 <div class="register_form_contenedor">
                     <label for="usuario"></label>
-                    <input class="register_form_contenedor-Input" type="text" value="" id="usuario" placeholder="Ingrese usuario">
-                </div>
-                <hr>
-                <h4>Fecha de Nacimiento</h4>
-                <div class="register_form_contenedor-fn">
-                    <label for="fechaNacimiento"></label>
-                    <input type="date" id="fechaNacimiento">
-                </div>
-                <hr>
-                <h4>Domicilio</h4>
-                <div class="register_form_contenedor">
-                    <label for="domicilio"></label>
-                    <input class="register_form_contenedor-Input" type="text" value="Ingrese Domicilio" id="domicilio">
-                </div>
-                <hr>
-                <h4>Perfil de Usuario</h4>
-                <div class="register_form_contenedor">
-                    <input type="radio" name="perfil" value="Comprador" checked>
-                    <label for="">comprador</label>
-                    <input type="radio" name="perfil" value="Vendedor">
-                    <label for="">Vendedor</label>
-                </div>
-                <hr>
-                <h4>Categorías de Interés </h4>
-                <div class="register_form_contenedor-checkbox">
-                    <div>
-                         <input type="checkbox" name="categoria" value="Electro">
-                         <label for="categoria">Electro</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="categoria" value="Moda">
-                        <label for="categoria">Moda</label>
-                    </div>
-                    <div>
-                         <input type="checkbox" name="categoria" value="Hogar">
-                         <label for="categoria">Hogar</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="categoria" value="Jugueteria">
-                        <label for="categoria">Jugueteria</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="categoria" value="Vida Sana">
-                        <label for="categoria">Vida Sana</label>
-                    </div>
-                </div>
-                <hr>
-                <h4>Fotografia</h4>
-                <div class="register_form_contenedor">
-                    <input type="file" name="avatar" accept=".jpg" multiple >
+                    <input name="regEmail" class="register_form_contenedor-Input" type="email" value="" id="usuario" placeholder="Ingrese email valido">
+                    <small class="small_error"><%= locals.errors && errors.regEmail ? errors.regEmail.msg : null %>  </small>
                 </div>
                 <hr>
                 <h4>contraseña</h4>
                 <div class="register_form_contenedor">
-                    <input class="register_form_contenedor-Input" type="password" name="pass" value="" placeholder="Ingrese password">
-                    <input class="register_form_contenedor-Input" type="password" name="confPass" value="" placeholder="Confirme password">
+                    <input name="regPass" class="register_form_contenedor-Input" type="password" value="" placeholder="Ingrese contraseña">
+                    <small class="small_error"><%= locals.errors && errors.regPass ? errors.regPass.msg : null %>  </small>
                 </div>
                 <hr>
-                <a href="/">volver</a>
-                <button  type="submit">Enviar</button>
-                <button type="reset">Reset</button>
+                <div class="register_form_contenedor">
+                    <a href="/">volver</a>
+                    <button  type="submit">Enviar</button>
+                    <button type="reset">Reset</button>
+                </div>
             </form>
         </section>
     </main>
