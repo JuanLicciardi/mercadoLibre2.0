@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 30px;
+ 
 }
 
 .register_section{
@@ -18,7 +19,7 @@
 }
 
 .register_form{
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -60,8 +61,10 @@
     width: 100%;
     color: rgba(0, 0, 0, .5);
     margin: 10px 0;
-    
 }
+
+
+
 
 .register_form_contenedor-fn{
     width: 100%;
@@ -76,10 +79,10 @@
     .register_form hr{
         width: 95%;
     }
-}
+
 
 @media (min-width:768px) {
     .register_section{
-        max-width: 40%;
+        max-width: 50%;
     }
 }
